@@ -8,7 +8,8 @@
 
 #ifndef LINKEDLIST_H_
 #define LINKEDLIST_H_
-#include <iostream>
+
+#include <cstddef>
 
 template <typename T>
 class LinkedList 
@@ -16,8 +17,8 @@ class LinkedList
 public:
   LinkedList();
   ~LinkedList();
-  void insert(T);
-  T remove();
+  void insert(T element);
+  T remove(std::size_t position);
 
 private:
   class Node {
@@ -29,8 +30,5 @@ private:
 
   Node* head;
 };
-
-// split definition from specification
-#include "LinkedList.cpp"
 
 #endif
